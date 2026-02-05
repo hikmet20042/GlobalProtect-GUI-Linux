@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-APP_DIR="/opt/globalprotect-gui"
+APP_DIR="/usr/lib/globalprotect-gui"
 
 if [[ ! -f "$APP_DIR/app.py" ]]; then
   echo "GlobalProtect GUI files were not found in $APP_DIR" >&2

@@ -36,25 +36,48 @@ python app.py
 
 If your enterprise GlobalProtect build uses different command options or custom MFA flows, check the in-app log for CLI stderr.
 
-## Build installable packages
+## Linux Mint (latest) optimized package flow
 
-### Debian (`.deb`)
+This project is now optimized for Mint/Ubuntu-style packaging (`.deb`) and installs to Debian-policy-friendly paths:
+
+- application files: `/usr/lib/globalprotect-gui`
+- launcher: `/usr/bin/globalprotect-gui`
+- desktop entry: `/usr/share/applications/globalprotect-gui.desktop`
+
+### 1) Install Mint build dependencies
 
 ```bash
-./scripts/build-deb.sh 0.1.0 amd64
+sudo apt update
+sudo apt install -y build-essential dpkg-dev desktop-file-utils python3 python3-tk
+```
+
+### 2) Build package
+
+```bash
+./scripts/build-deb.sh 0.1.0
+# or
+make package-mint
 ```
 
 Output example:
 
 - `build/deb/globalprotect-gui_0.1.0_amd64.deb`
 
-Install:
+### 3) Install package
 
 ```bash
 sudo apt install ./build/deb/globalprotect-gui_0.1.0_amd64.deb
 ```
 
-### RPM (`.rpm`)
+### 4) Launch
+
+```bash
+globalprotect-gui
+```
+
+You can also launch from the Mint application menu (**GlobalProtect GUI**).
+
+## RPM package flow (Fedora/RHEL/openSUSE)
 
 ```bash
 ./scripts/build-rpm.sh 0.1.0

@@ -21,22 +21,22 @@ A stable desktop UI wrapper around the globalprotect CLI client.
 # No build required.
 
 %install
-mkdir -p %{buildroot}/opt/globalprotect-gui/gp_gui
+mkdir -p %{buildroot}/usr/lib/globalprotect-gui/gp_gui
 mkdir -p %{buildroot}/usr/bin
 mkdir -p %{buildroot}/usr/share/applications
 
-install -m 0644 app.py %{buildroot}/opt/globalprotect-gui/app.py
-install -m 0644 gp_gui/__init__.py %{buildroot}/opt/globalprotect-gui/gp_gui/__init__.py
-install -m 0644 gp_gui/client.py %{buildroot}/opt/globalprotect-gui/gp_gui/client.py
-install -m 0644 gp_gui/config.py %{buildroot}/opt/globalprotect-gui/gp_gui/config.py
+install -m 0644 app.py %{buildroot}/usr/lib/globalprotect-gui/app.py
+install -m 0644 gp_gui/__init__.py %{buildroot}/usr/lib/globalprotect-gui/gp_gui/__init__.py
+install -m 0644 gp_gui/client.py %{buildroot}/usr/lib/globalprotect-gui/gp_gui/client.py
+install -m 0644 gp_gui/config.py %{buildroot}/usr/lib/globalprotect-gui/gp_gui/config.py
 install -m 0755 scripts/globalprotect-gui %{buildroot}/usr/bin/globalprotect-gui
 install -m 0644 packaging/globalprotect-gui.desktop %{buildroot}/usr/share/applications/globalprotect-gui.desktop
 
 %files
-/opt/globalprotect-gui/app.py
-/opt/globalprotect-gui/gp_gui/__init__.py
-/opt/globalprotect-gui/gp_gui/client.py
-/opt/globalprotect-gui/gp_gui/config.py
+/usr/lib/globalprotect-gui/app.py
+/usr/lib/globalprotect-gui/gp_gui/__init__.py
+/usr/lib/globalprotect-gui/gp_gui/client.py
+/usr/lib/globalprotect-gui/gp_gui/config.py
 /usr/bin/globalprotect-gui
 /usr/share/applications/globalprotect-gui.desktop
 
