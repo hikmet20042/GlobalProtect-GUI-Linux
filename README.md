@@ -17,7 +17,7 @@ A stable desktop GUI for managing the `globalprotect` Linux CLI client.
 - Python 3.10+
 - GlobalProtect CLI installed and available on `PATH` as `globalprotect`.
 
-## Quick start
+## Run from source
 
 ```bash
 python3 -m venv .venv
@@ -34,11 +34,45 @@ python app.py
 3. If your company uses Okta/SAML, complete browser-based login + MFA when prompted.
 4. The app will continue polling status and switch to **Connected** when the tunnel is established.
 
-If your enterprise GlobalProtect build uses different command options or custom MFA flows, check the in-app log for CLI stderr and adapt portal/auth policies as needed.
+If your enterprise GlobalProtect build uses different command options or custom MFA flows, check the in-app log for CLI stderr.
 
-## Testing
+## Build installable packages
+
+### Debian (`.deb`)
 
 ```bash
-python -m unittest discover -s tests -v
-python -m py_compile app.py gp_gui/*.py
+./scripts/build-deb.sh 0.1.0 amd64
+```
+
+Output example:
+
+- `build/deb/globalprotect-gui_0.1.0_amd64.deb`
+
+Install:
+
+```bash
+sudo apt install ./build/deb/globalprotect-gui_0.1.0_amd64.deb
+```
+
+### RPM (`.rpm`)
+
+```bash
+./scripts/build-rpm.sh 0.1.0
+```
+
+Output example:
+
+- `build/rpm/RPMS/noarch/globalprotect-gui-0.1.0-1.noarch.rpm`
+
+Install:
+
+```bash
+sudo dnf install ./build/rpm/RPMS/noarch/globalprotect-gui-0.1.0-1.noarch.rpm
+```
+
+## Testing / checks
+
+```bash
+make test
+make lint
 ```

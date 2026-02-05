@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+APP_DIR="/opt/globalprotect-gui"
+
+if [[ ! -f "$APP_DIR/app.py" ]]; then
+  echo "GlobalProtect GUI files were not found in $APP_DIR" >&2
+  exit 1
+fi
+
+exec python3 "$APP_DIR/app.py" "$@"
