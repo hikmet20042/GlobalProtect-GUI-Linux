@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=GlobalProtect GUI
+Comment=Linux GUI for GlobalProtect CLI
+Exec=globalprotect-gui
+Icon=network-vpn
+Terminal=false
+Type=Application
+Categories=Network;
+StartupNotify=true
