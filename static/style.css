@@ -1,0 +1,101 @@
+:root {
+  --bg: #edf4ee;
+  --matte: #5f7d65;
+  --matte-dark: #3f5644;
+  --text: #1f2a21;
+  --card: #f7fbf8;
+  --border: #c9d8cc;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+}
+
+.wrap {
+  width: min(960px, 92vw);
+  margin: 0 auto;
+}
+
+header {
+  background: linear-gradient(90deg, var(--matte-dark), var(--matte));
+  color: #fff;
+  padding: 1rem 0;
+  margin-bottom: 1.5rem;
+}
+
+header .wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+header h1 { margin: 0; }
+header p { margin: 0.2rem 0 0; opacity: 0.85; }
+
+nav a {
+  color: #f2fff4;
+  margin-left: 1rem;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 3px 10px rgba(35, 60, 40, 0.08);
+}
+
+.card h3 a {
+  color: var(--matte-dark);
+  text-decoration: none;
+}
+
+.meta {
+  color: #516456;
+  font-size: 0.9rem;
+}
+
+input, textarea, button {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.65rem;
+  font-size: 1rem;
+  margin-top: 0.3rem;
+}
+
+label { display: block; margin-bottom: 0.8rem; }
+
+button, .btn {
+  background: var(--matte);
+  color: white;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+}
+
+.actions {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.actions form { margin: 0; }
+.danger { background: #a04d52; }
+
+.flash {
+  background: #d6edd8;
+  padding: 0.7rem;
+  border-radius: 7px;
+  margin-bottom: 1rem;
+}
